@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="javascript/jquery-1.12.4.min.js"></script>
+    <script src="javascript/collision.js"></script>
+    <script src="javascript/create.js"></script>
+    <script src="javascript/app.js"></script>
+</head>
+
+<body>
+    <div class="game">
+        <img src="images/logo-02.png" width="40" id="logo" alt="">
+        <div id="one">
+            <div class="container">
+                <span>How to Play Star Battle.</span>
+                <div class="content">
+                    <p><span>1.</span>Move the spaceship using the sensible areas in the screen;</p>
+                    <p><span>2.</span>The timer present the time lapsed;</p>
+                    <p><span>3.</span>The fuel counter show the remain fuel;</p>
+                    <p><span>4.</span>During the flight, the spaceship needs to destroy the asteroids and enemy
+                        spaceships that are presented in the space;</p>
+                    <p><span>5.</span>You can shoot pressing Space Bar;</p>
+                    <p><span>6.</span>If the spaceship hits a asteroid or another spaceship, you lose 15 points of fuel;
+                    </p>
+                    <p><span>7.</span>Enemy spaceship needs 1 shot to be destroyed, you will get 5 points for each enemy
+                        destroyed;</p>
+                    <p><span>8.</span>Asteroid needs 2 shots to be destroyed, you will get 10 points for each asteroid
+                        destroyed;</p>
+                    <p><span>9.</span>If you destroy a friendly spaceship, you lose 10 points;</p>
+                    <p><span>10.</span>During the flight, the spaceship needs to collect fuel in the space;</p>
+                    <p><span>11.</span>You can pause the game clicking in a button pause, or pressing the letter "p";
+                    </p>
+                    <p><span>12.</span>Go beyond all limits;</p>
+                    <p>Battle in Space with Star Battle Championship...</p>
+                </div>
+                <input type="button" value="Start Game" id="start">
+            </div>
+        </div>
+        <div id="map">
+            <div id="planet">
+                <img src="images/planet-1.png" alt="" width="25">
+                <img src="images/planet-4.png" alt="" width="40">
+                <img src="images/001-global.png" alt="" width="35">
+                <img src="images/002-travel.png" alt="" width="45">
+                <img src="images/004-science-1.png" alt="" width="20">
+            </div>
+            <div class="nav">
+                <div class="time">
+                    <img src="images/time.png" alt="" width="15">
+                    <span id="time">00</span>
+                </div>
+                <div class="live">
+                    <img src="images/live.png" alt="" width="15">
+                    <span id="live">15</span>
+                </div>
+                <div class="score">
+                    <img src="images/score.png" alt="" width="15">
+                    <span id="score">0</span>
+                </div>
+
+                <div class="common">
+                    <span id="stop">P</span>
+                    <span id="plus">F+</span>
+                    <span id="jian">F-</span>
+                    <span><img src="images/sy.png" alt="" width="20"></span>
+                </div>
+            </div>
+            <div class="box">
+                <div id="top"></div>
+                <div id="left"></div>
+                <div id="bottom"></div>
+                <div id="right"></div>
+            </div>
+            <div id="launch"></div>
+        </div>
+        <div id="ranking">
+            <div id="tj">
+                <span>What you name ?</span>
+                <input type="text" name="names" id="text"><br/>
+                <input type="button" disabled="disabled" value="Submit" id="sub">
+            </div>
+            <div id="ran">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ranking</th>
+                            <th>name</th>
+                            <th>score</th>
+                            <th>time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb">
+                        
+                    </tbody>
+                </table>
+                <input type="button" value="Start Game" id="newGame">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

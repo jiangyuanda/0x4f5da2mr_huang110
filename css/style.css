@@ -1,0 +1,484 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.game {
+    width: 640px;
+    height: 360px;
+    background: url("../images/background-1.jpg") center;
+    background-size: cover;
+    animation: gameAnimate 20s linear infinite;
+    animation-play-state: paused;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gameAnimate {
+    to {
+        background-position-x: -1920px;
+    }
+}
+
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1200;
+}
+
+#one,
+#map,
+#ranking {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#one {
+    background-color: rgba(31, 31, 31, 0.8);
+    color: white;
+}
+
+.container {
+    width: 500px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.container>span {
+    display: block;
+    font-size: 15px;
+    opacity: 0;
+    transform: translateY(-40px);
+    animation: p 1.5s forwards;
+}
+
+.content p {
+    font-size: 10px;
+    opacity: 0;
+    animation: p 1.5s forwards;
+}
+
+.content p:nth-child(odd) {
+    transform: translateX(-40px);
+}
+
+.content p:nth-child(even) {
+    transform: translateX(40px);
+}
+
+@keyframes p {
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+.content span {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+
+#start {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    transform: translateY(40px);
+    opacity: 0;
+    animation: p 1.5s forwards;
+    transition: 0.3s all;
+}
+
+#start:hover {
+    background-color: #f19e0d;
+}
+
+.nav {
+    color: white;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav>* {
+    z-index: 100;
+}
+
+.nav div {
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.nav .time {
+    left: 20%;
+}
+
+.nav .score {
+    left: 60%;
+}
+
+.nav .live {
+    left: 40%;
+}
+
+.nav .common {
+    left: 75%;
+    background-color: transparent;
+    border: none;
+    width: auto;
+}
+
+.common span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#planet img {
+    position: absolute;
+    left: 110%;
+}
+
+#planet img:nth-child(1) {
+    top: 13%;
+    animation: planet 8s linear infinite, rotate 5s linear infinite;
+    animation-play-state: paused;
+}
+
+#planet img:nth-child(2) {
+    top: 25%;
+    animation: planet 5s linear infinite, rotate 5s linear infinite;
+    animation-play-state: paused;
+}
+
+#planet img:nth-child(3) {
+    top: 43%;
+    animation: planet 6s linear infinite, rotate 5s linear infinite;
+    animation-play-state: paused;
+}
+
+#planet img:nth-child(4) {
+    top: 60%;
+    animation: planet 4s linear infinite, rotate 5s linear infinite;
+    animation-play-state: paused;
+}
+
+#planet img:nth-child(5) {
+    top: 85%;
+    animation: planet 10s linear infinite, rotate 5s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes planet {
+    to {
+        left: -10%;
+    }
+}
+
+@keyframes rotate {
+    to {
+        transform: rotateZ(-360deg);
+    }
+}
+
+#player,
+#enemy,
+#friend {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+}
+
+#player {
+    background: url("../images/ship_1.png");
+    top: 20%;
+    background-size: cover;
+    animation: player 1s steps(4) infinite;
+}
+
+@keyframes player {
+    to {
+        background-position-x: 160px;
+    }
+}
+
+#enemy {
+    background: url("../images/ship_3.png");
+    background-size: cover;
+    animation: airship 1s steps(4) infinite;
+}
+
+#friend {
+    background: url("../images/ship_2.png");
+    background-size: cover;
+    animation: airship 1s steps(4) infinite;
+}
+
+@keyframes airship {
+    to {
+        background-position-x: -160px;
+    }
+}
+
+#stone {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: url("../images/aestroid_dark.png") center no-repeat;
+    background-size: cover;
+    animation: rotate 4s linear infinite;
+}
+
+#nl {
+    width: 15px;
+    height: 15px;
+    background: url("../images/live.png") center no-repeat;
+    background-size: cover;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    animation: rotate 4s linear infinite;
+}
+
+#ranking {
+    background-color: rgba(31, 31, 31, 0.8);
+}
+
+#ranking #tj {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    color: white;
+}
+
+#tj input {
+    box-sizing: border-box;
+    width: 300px;
+    height: 25px;
+    outline: none;
+}
+
+#tj input[type="text"] {
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+}
+
+#tj span {
+    font-size: 20px;
+    display: block;
+    width: 500px;
+}
+
+#tj #sub {
+    border: 2px solid white;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    cursor: no-drop;
+}
+
+#ran {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    color: white;
+    display: none;
+}
+
+#ran table {
+    display: block;
+    width: 400px;
+}
+
+#ran table th {
+    background-color: red;
+}
+
+#ran table tr:nth-child(odd) {
+    background-color: rgb(80, 77, 77);
+}
+
+#ran table tr:nth-child(even) {
+    background-color: rgb(177, 177, 177);
+    color: black;
+}
+
+#ran table td,
+#ran table th {
+    width: 100px;
+    height: 25px;
+    text-align: center;
+    border: 2px solid white;
+    font-size: 13px;
+}
+
+#ran input {
+    width: 100%;
+    margin-top: 10px;
+    height: 25px;
+    border: 2px solid white;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.bullent {
+    width: 10px;
+    height: 5px;
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.enemyBullent {
+    width: 10px;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+}
+
+#one {
+    display: block;
+}
+
+#map {
+    display: none;
+}
+
+#ranking {
+    display: none;
+}
+
+
+#left,
+#right,
+#top,
+#bottom {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: red;
+    cursor: pointer;
+}
+
+.box {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    width: 80px;
+    height: 80px;
+    z-index: 1000;
+}
+
+#left {
+    left: 15%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateZ(180deg);
+}
+
+#top {
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(-90deg);
+}
+
+#right {
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#bottom {
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(90deg);
+}
+
+#left:after,
+#top:after,
+#right:after,
+#bottom:after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/direction.png') center no-repeat;
+    background-size: cover;
+}
+
+#launch {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 50%;
+    top: 70%;
+    right: 2%;
+    cursor: pointer;
+}
+
+#launch::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url('../images/blot.png') center no-repeat;
+    background-size: cover;
+}
